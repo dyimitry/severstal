@@ -24,19 +24,3 @@ class Postgres:
 
     def insert(self, size):
         self.cur.execute(f"""INSERT INTO {self.name_table}(size) VALUES ({size});""")
-
-    def select(self):
-        self.cur.execute(f'''
-        SELECT *
-        FROM {self.name_table};
-        ''')
-
-        for result in self.cur:
-            print(result)
-        # self.con.close()
-
-# q = Postgres('pictures')
-# q.create_table()
-# q.insert(5, '1')
-# c  =q.select()
-# q.close_database()
